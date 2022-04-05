@@ -1,4 +1,6 @@
-//やること（✔︎①アニメーションをつける、(②編集機能)→ミニマルにいく（余裕があれば）、✔︎③時間帯追加）
+/**
+*ToDoアプリ
+*/
 
 const headerDate = document.getElementById('headerDate');
 const form = document.getElementById('form');
@@ -150,31 +152,6 @@ async function add(todo) {
 
     li.appendChild(minus);
 
-    // Editボタン
-    // const edit = document.createElement('button');
-    // edit.classList.add('border-0', 'rounded', 'btn', 'btn-default');
-    // const i2 = document.createElement('i');
-    // i2.classList.add('bi', 'bi-pencil-square');
-    // i2.style = 'font-size:16px';
-
-    // edit.classList.add('border-0', 'rounded');
-    // edit.appendChild(i2);
-
-    // li.prepend(edit);
-
-    // doneボタン（初期表示は非表示）
-    // const done = document.createElement('button');
-    // done.type = 'submit';
-    // done.classList.add('border-0', 'rounded', 'btn', 'btn-default');
-    // const i3 = document.createElement('i');
-    // i3.classList.add('bi', 'bi-check-circle-fill');
-    // i3.style = 'font-size:16px';
-
-    // done.classList.add('border-0', 'rounded');
-    // done.appendChild(i3);
-
-    // li.prepend(done);
-    // done.style.display = 'none';
 
     // trash,sort表示
     trash.style.display = 'block';
@@ -231,29 +208,6 @@ async function add(todo) {
       });
     });
 
-
-    // Editボタン押されたら、そのリストを編集（Editボタンとマイナスボタンを削除し、Doneボタンを表示）
-    // edit.addEventListener('click', function () {
-    //   li.classList.toggle('text-decoration-line-through');
-    //   li.classList.toggle('list-group-item-dark');
-    //   done.style.display = 'block';
-    //   // edit.style.display = 'none';
-
-    //   console.log(todo.text);
-    //   li.innerHTML = '<label>' + done + '<input type="text" id="inputText" class="form-control" placeholder="' + todo.text + '" autocomplete="off"></label>'
-    //   $('#inputText').focus();
-    //   console.log(todo);
-
-
-    //   inputText.addEventListener('change', function () {
-    //     todo.text = $('#inputText').value;
-    //     console.log($('#inputText').value);
-
-    //     $('#inputText').innerHTML = li;
-    //     saveData();
-    //     result();
-    //   })
-    // })
 
 
     // ul要素の子要素に追加して、input欄をデフォルト状態に戻す
