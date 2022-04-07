@@ -125,7 +125,8 @@ async function add(todo) {
       }, 1000);
     });
 
-
+    // 子要素追加
+    // 時間帯    
     const span1 = document.createElement('span');
     span1.innerText = toDoTimeStart;
     span1.classList.add('f_item');
@@ -140,7 +141,7 @@ async function add(todo) {
     li.prepend(span1);
 
 
-    // 子要素追加
+    
     // マイナスボタン
     const minus = document.createElement('button');
     minus.classList.add('border-0', 'rounded', 'btn', 'btn-default', 'f_item');
@@ -266,7 +267,7 @@ function saveData() {
   });
 };
 
-// DBデータ（１単位）削除
+// DBデータ（１行単位）削除
 function deleteData(key) {
   db.rows.delete(key).catch((e) => {
     console.log(e);
