@@ -17,7 +17,7 @@ sort.style.display = 'none';
 
 // today日付を入れる
 const today = formatDate(new Date());
-headerDate.innerText = '人生で一度の' + today;
+headerDate.innerText = today;
 
 
 $(function () {
@@ -84,6 +84,7 @@ db.rows.each(rows => {
 // フォームに入力し、＋アイコンかEnterが押されれば追加
 form.addEventListener('submit', function (event) {
   event.preventDefault();
+  input.focus();
   add();
 });
 
@@ -267,12 +268,14 @@ async function add(todo) {
 
     // trashが押されたら、リスト削除(速さを取るため、アニメーション無し)
     trash.addEventListener('click', function () {
-      li.remove();
-      allDeleteData();
-      // saveData();
-      trash.style.display = 'none';
-      sort.style.display = 'none';
-      rate.innerText = '今日のToDoを書き出そう！';
+      if (window.confirm('リストが全て消えますが、よろしいでしょうか？')) {
+        li.remove();
+        allDeleteData();
+        // saveData();
+        trash.style.display = 'none';
+        sort.style.display = 'none';
+        rate.innerText = '今日のToDoを書き出そう！';
+      };
     });
 
 
